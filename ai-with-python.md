@@ -1,5 +1,7 @@
 # Python Machine Learning
 
+From the book, [Artificial Intelligence with Python](https://www.safaribooksonline.com/library/view/artificial-intelligence-with/9781786464392/ch02s03.html)
+
 python3 -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
 pip install -U scikit-learn
 
