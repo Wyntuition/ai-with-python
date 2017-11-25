@@ -54,9 +54,9 @@ Normalization
 #### Binarization - converting numerical values into booleans
 
 
+CURRENT SPOT:
+https://www.safaribooksonline.com/library/view/artificial-intelligence-with/9781786464392/ch02s05.html
 
-
-@mitultiwari
 
 NOTES:
 
