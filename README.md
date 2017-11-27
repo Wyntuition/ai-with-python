@@ -60,4 +60,4 @@ https://www.safaribooksonline.com/library/view/artificial-intelligence-with/9781
 
 NOTES:
 
-- pip not working - put in .profile: pip3='python3 -m pip'
+- pip not working - put in .profile: pip3='python3 -m pip'  

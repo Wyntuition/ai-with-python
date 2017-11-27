@@ -1,0 +1,16 @@
+FROM python:3
+
+RUN apt-get update && apt-get install -y 
+    
+RUN pip3 install --upgrade \
+    numpy \
+    scipy \
+    matplotlib \ 
+    ipython \
+    jupyter \
+    pandas \
+    sympy \ 
+    nose \
+    scikit-learn 
+
+ENV DISPLAY :0
