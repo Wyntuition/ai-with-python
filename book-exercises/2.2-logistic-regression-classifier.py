@@ -1,3 +1,8 @@
+### Logistic Regression
+# - Go to method for binary classification problems (problems with 2 class values)
+# - Based on the logistic function, or the sigmoid function, originally developed to describe properties of population growth, so is an S-shaped curve that maps any real number into a value between 0 and 1 exclusive: 1 / (1 + e^value)
+
+
 import numpy as np 
 from sklearn import linear_model  
 import matplotlib.pyplot as plt 
