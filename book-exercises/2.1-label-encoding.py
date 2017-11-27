@@ -15,7 +15,6 @@ for i, item in enumerate(encoder.classes_):
     print(item, '-->', i) 
 
 
-
 # Encode a set of labels using the encoder 
 test_labels = ['green', 'red', 'black'] 
 encoded_values = encoder.transform(test_labels) 
