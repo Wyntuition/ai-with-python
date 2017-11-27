@@ -18,7 +18,7 @@ print("\nBinarized data:\n", data_binarized)
 # We do this in order to remove bias from the features in our feature vector.
 
 # Print mean and standard deviation 
-print("\nBEFORE mean removal:") 
+print("\nMeans BEFORE mean removal:") 
 print("Mean =", input_data.mean(axis=0)) 
 print("Std deviation =", input_data.std(axis=0))
 
