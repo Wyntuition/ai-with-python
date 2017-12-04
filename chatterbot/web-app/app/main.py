@@ -9,7 +9,7 @@ bot = ChatBot("English Bot", storage_adapter="chatterbot.storage.SQLStorageAdapt
 bot.set_trainer(ChatterBotCorpusTrainer)
 bot.train(
     "chatterbot.corpus.english",
-    "./chatterbot/excella/"
+    "./excella/"
 )
 
 @app.route("/")
@@ -20,6 +20,5 @@ def home():
 def get_raw_response(query):
     return str(bot.get_response(query))
 
-
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', debug=True, port=5000)
