@@ -11,15 +11,41 @@ bot = ChatBot(
     "Terminal",
     storage_adapter="chatterbot.storage.SQLStorageAdapter",
     input_adapter="chatterbot.input.TerminalAdapter",
-    output_adapter="chatterbot.output.TerminalAdapter"
+    output_adapter="chatterbot.output.TerminalAdapter",
+    logic_adapters=[
+        {
+            'import_path': 'chatterbot.logic.BestMatch'
+        },
+        {
+            'import_path': 'chatterbot.logic.SpecificResponseAdapter',
+            'input_text': 'Help me!',
+            'output_text': 'Ok, here is a link: http://chatterbot.rtfd.org/en/latest/quickstart.html'
+        }
+    ]
 )
 bot.set_trainer(ChatterBotCorpusTrainer)
 
-bot.train("chatterbot.corpus.english")
+bot.train(
+    "chatterbot.corpus.english",
+    "./chatterbot/excella/"
+)
+
+# trainer='chatterbot.trainers.ListTrainer'
+# # Train the chat bot with a few responses
+# bot.train([
+#     'What is Excella Consulting?',
+#     'An consulting company based in the DC area that does business software, data analytics and Agile.',
+#     'What services does Excella provide?',
+#     'Python, .NET, AI and data analytics.'
+#     'How can I help you?',
+#     'I want to create a chat bot',
+#     'Have you read the documentation?',
+#     'No, I have not',
+#     'This should help get you started: http://chatterbot.rtfd.org/en/latest/quickstart.html'
+# ])
 
 
 CONVERSATION_ID = bot.storage.create_conversation()
-
 
 def get_feedback():
     from chatterbot.utils import input_function
@@ -54,4 +80,5 @@ while True:
 
     # Press ctrl-c or ctrl-d on the keyboard to exit
     except (KeyboardInterrupt, EOFError, SystemExit):
+        chatbot.trainer.export_for_training('./my_export.json')
         break
